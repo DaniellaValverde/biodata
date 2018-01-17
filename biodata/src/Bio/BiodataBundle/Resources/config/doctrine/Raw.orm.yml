@@ -1,0 +1,45 @@
+Bio\BiodataBundle\Entity\Raw:
+    type: entity
+    table: null
+    repositoryClass: Bio\BiodataBundle\Repository\RawRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        day:
+            type: datetime
+        duration:
+            type: time
+        baseline:
+            type: float
+        hEGLevel:
+            type: float
+            column: HEG_level
+        hEGAve:
+            type: float
+            column: HEG_ave
+        hEGMax:
+            type: float
+            column: HEG_max
+        gain:
+            type: float
+        normedGain:
+            type: float
+            column: normed_gain
+        maxGain:
+            type: float
+            column: max_gain
+        timeAboveBase:
+            type: float
+            column: time_above_base
+        percentSucess:
+            type: float
+            column: percent_sucess
+        event:
+            type: float
+        eyes:
+            type: boolean
+    lifecycleCallbacks: {  }

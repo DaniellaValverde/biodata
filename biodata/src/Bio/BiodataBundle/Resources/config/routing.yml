@@ -1,0 +1,7 @@
+bio_biodata_homepage:
+    path:     /
+    defaults: { _controller: BioBiodataBundle:Default:index }
+
+index:
+    path:     /index
+    defaults: { _controller: BioBiodataBundle:User:index }
