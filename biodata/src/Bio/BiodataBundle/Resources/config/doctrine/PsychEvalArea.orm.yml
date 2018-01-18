@@ -1,0 +1,26 @@
+Bio\BiodataBundle\Entity\PsychEvalArea:
+    type: entity
+    table: null
+    repositoryClass: Bio\BiodataBundle\Repository\PsychEvalAreaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        numberPositives:
+            type: integer
+            column: number_positives
+        percentPositives:
+            type: integer
+            column: percent_positives
+        sumPositives:
+            type: integer
+            column: sum_positives
+        percentSum:
+            type: integer
+            column: percent_sum
+        area:
+            type: json_array
+    lifecycleCallbacks: {  }

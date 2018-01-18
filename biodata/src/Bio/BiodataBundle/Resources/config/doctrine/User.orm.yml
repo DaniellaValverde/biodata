@@ -20,10 +20,39 @@ Bio\BiodataBundle\Entity\User:
             type: string
             length: 255
             column: last_name
+        phoneNumber:
+            type: integer
+            column: phone_number
+        gender:
+            type: boolean
+            column: gender
+        birthdate:
+            type: datetime
+            column: birthdate
+        age:
+            type: integer
+            column: age
+        educationalAttainment:
+            type: string
+            length: 255
+            column: educ_att
         email:
             type: string
             length: 255
         password:
             type: string
             length: 255
+        salt:
+            type: string
+            length: 255
+            column: salt
+        diseases:
+            type: string
+            length: 255
+            column: diseases
+        medications:
+            type: string
+            length: 255
+            column: medications
+
     lifecycleCallbacks: {  }

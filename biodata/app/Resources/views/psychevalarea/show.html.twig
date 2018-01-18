@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Psychevalarea</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ psychEvalArea.id }}</td>
+            </tr>
+            <tr>
+                <th>Numberpositives</th>
+                <td>{{ psychEvalArea.numberPositives }}</td>
+            </tr>
+            <tr>
+                <th>Percentpositives</th>
+                <td>{{ psychEvalArea.percentPositives }}</td>
+            </tr>
+            <tr>
+                <th>Sumpositives</th>
+                <td>{{ psychEvalArea.sumPositives }}</td>
+            </tr>
+            <tr>
+                <th>Percentsum</th>
+                <td>{{ psychEvalArea.percentSum }}</td>
+            </tr>
+            <tr>
+                <th>Area</th>
+                <td>{{ psychEvalArea.area }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('eval_area_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('eval_area_edit', { 'id': psychEvalArea.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

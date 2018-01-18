@@ -366,34 +366,4 @@ class User
     {
         return $this->phoneNumber;
     }
-
-    /**
-     * @var string
-     */
-    private $educationalAttainment;
-
-
-    /**
-     * Set educationalAttainment.
-     *
-     * @param string $educationalAttainment
-     *
-     * @return User
-     */
-    public function setEducationalAttainment($educationalAttainment)
-    {
-        $this->educationalAttainment = $educationalAttainment;
-
-        return $this;
-    }
-
-    /**
-     * Get educationalAttainment.
-     *
-     * @return string
-     */
-    public function getEducationalAttainment()
-    {
-        return $this->educationalAttainment;
-    }
 }

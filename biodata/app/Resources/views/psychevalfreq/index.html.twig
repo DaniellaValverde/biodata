@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Psychevalfreqs list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Numberpositives</th>
+                <th>Percentpositives</th>
+                <th>Sumpositives</th>
+                <th>Percentsum</th>
+                <th>Frequency</th>
+                <th>Sns</th>
+                <th>Pns</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for psychEvalFreq in psychEvalFreqs %}
+            <tr>
+                <td><a href="{{ path('eval_freq_show', { 'id': psychEvalFreq.id }) }}">{{ psychEvalFreq.id }}</a></td>
+                <td>{{ psychEvalFreq.numberPositives }}</td>
+                <td>{{ psychEvalFreq.percentPositives }}</td>
+                <td>{{ psychEvalFreq.sumPositives }}</td>
+                <td>{{ psychEvalFreq.percentSum }}</td>
+                <td>{{ psychEvalFreq.frequency }}</td>
+                <td>{{ psychEvalFreq.sns }}</td>
+                <td>{{ psychEvalFreq.pns }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('eval_freq_show', { 'id': psychEvalFreq.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('eval_freq_edit', { 'id': psychEvalFreq.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('eval_freq_new') }}">Create a new psychEvalFreq</a>
+        </li>
+    </ul>
+{% endblock %}

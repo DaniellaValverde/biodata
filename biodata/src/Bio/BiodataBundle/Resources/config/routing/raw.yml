@@ -1,0 +1,24 @@
+raw_index:
+    path:     /
+    defaults: { _controller: "BioBiodataBundle:Raw:index" }
+    methods:  GET
+
+raw_show:
+    path:     /{id}/show
+    defaults: { _controller: "BioBiodataBundle:Raw:show" }
+    methods:  GET
+
+raw_new:
+    path:     /new
+    defaults: { _controller: "BioBiodataBundle:Raw:new" }
+    methods:  [GET, POST]
+
+raw_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BioBiodataBundle:Raw:edit" }
+    methods:  [GET, POST]
+
+raw_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BioBiodataBundle:Raw:delete" }
+    methods:  DELETE

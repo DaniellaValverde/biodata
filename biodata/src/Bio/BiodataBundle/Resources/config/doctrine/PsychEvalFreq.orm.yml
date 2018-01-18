@@ -1,0 +1,30 @@
+Bio\BiodataBundle\Entity\PsychEvalFreq:
+    type: entity
+    table: null
+    repositoryClass: Bio\BiodataBundle\Repository\PsychEvalFreqRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        numberPositives:
+            type: integer
+            column: number_positives
+        percentPositives:
+            type: integer
+            column: percent_positives
+        sumPositives:
+            type: integer
+            column: sum_positives
+        percentSum:
+            type: integer
+            column: percent_sum
+        frequency:
+            type: json_array
+        sns:
+            type: integer
+        pns:
+            type: integer
+    lifecycleCallbacks: {  }

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Psychevalareas list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Numberpositives</th>
+                <th>Percentpositives</th>
+                <th>Sumpositives</th>
+                <th>Percentsum</th>
+                <th>Area</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for psychEvalArea in psychEvalAreas %}
+            <tr>
+                <td><a href="{{ path('eval_area_show', { 'id': psychEvalArea.id }) }}">{{ psychEvalArea.id }}</a></td>
+                <td>{{ psychEvalArea.numberPositives }}</td>
+                <td>{{ psychEvalArea.percentPositives }}</td>
+                <td>{{ psychEvalArea.sumPositives }}</td>
+                <td>{{ psychEvalArea.percentSum }}</td>
+                <td>{{ psychEvalArea.area }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('eval_area_show', { 'id': psychEvalArea.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('eval_area_edit', { 'id': psychEvalArea.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('eval_area_new') }}">Create a new psychEvalArea</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Raws list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Day</th>
+                <th>Duration</th>
+                <th>Baseline</th>
+                <th>Heglevel</th>
+                <th>Hegave</th>
+                <th>Hegmax</th>
+                <th>Gain</th>
+                <th>Normedgain</th>
+                <th>Maxgain</th>
+                <th>Timeabovebase</th>
+                <th>Percentsucess</th>
+                <th>Event</th>
+                <th>Eyes</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for raw in raws %}
+            <tr>
+                <td><a href="{{ path('raw_show', { 'id': raw.id }) }}">{{ raw.id }}</a></td>
+                <td>{% if raw.day %}{{ raw.day|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if raw.duration %}{{ raw.duration|date('H:i:s') }}{% endif %}</td>
+                <td>{{ raw.baseline }}</td>
+                <td>{{ raw.hEGLevel }}</td>
+                <td>{{ raw.hEGAve }}</td>
+                <td>{{ raw.hEGMax }}</td>
+                <td>{{ raw.gain }}</td>
+                <td>{{ raw.normedGain }}</td>
+                <td>{{ raw.maxGain }}</td>
+                <td>{{ raw.timeAboveBase }}</td>
+                <td>{{ raw.percentSucess }}</td>
+                <td>{{ raw.event }}</td>
+                <td>{% if raw.eyes %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('raw_show', { 'id': raw.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('raw_edit', { 'id': raw.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('raw_new') }}">Create a new raw</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Psychevalfreq</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ psychEvalFreq.id }}</td>
+            </tr>
+            <tr>
+                <th>Numberpositives</th>
+                <td>{{ psychEvalFreq.numberPositives }}</td>
+            </tr>
+            <tr>
+                <th>Percentpositives</th>
+                <td>{{ psychEvalFreq.percentPositives }}</td>
+            </tr>
+            <tr>
+                <th>Sumpositives</th>
+                <td>{{ psychEvalFreq.sumPositives }}</td>
+            </tr>
+            <tr>
+                <th>Percentsum</th>
+                <td>{{ psychEvalFreq.percentSum }}</td>
+            </tr>
+            <tr>
+                <th>Frequency</th>
+                <td>{{ psychEvalFreq.frequency }}</td>
+            </tr>
+            <tr>
+                <th>Sns</th>
+                <td>{{ psychEvalFreq.sns }}</td>
+            </tr>
+            <tr>
+                <th>Pns</th>
+                <td>{{ psychEvalFreq.pns }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('eval_freq_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('eval_freq_edit', { 'id': psychEvalFreq.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

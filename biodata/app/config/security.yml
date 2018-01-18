@@ -22,3 +22,19 @@ security:
 
             # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
             #form_login: ~
+
+    access_control:
+            - { path: ^/admin, roles: ROLE_ADMIN }
+            - { path: ^/blogger, roles: ROLE_USER }
+            - { path: ^/user, roles: ROLE_ADMIN }
+            - { path: ^/{id}/show, roles: ROLE_ADMIN }
+            - { path: ^/{id}/edit, roles: ROLE_ADMIN }
+            - { path: ^/{id}/delete, roles: ROLE_ADMIN }
+            - { path: ^/new, roles: ROLE_ADMIN }
+
+    access_decision_manager:
+        strategy: unanimous
+
+    role_hierarchy:
+        ROLE_ADMIN:     [ROLE_USER, ROLE_ADMIN]
+        ROLE_USER:       [ROLE_USER]

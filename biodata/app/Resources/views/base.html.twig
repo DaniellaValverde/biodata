@@ -1,13 +1,46 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+    {#<head>#}
+        {#<meta charset="UTF-8" />#}
+        {#<title>{% block title %}Welcome!{% endblock %}</title>#}
+        {#{% block stylesheets %}{% endblock %}#}
+        {#<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />#}
+    {#</head>#}
+    {#<body>#}
+        {#{% block body %}{% endblock %}#}
+        {#{% block javascripts %}{% endblock %}#}
+    {#</body>#}
+{#</html>#}
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+<header>
+    <div style="background-color: #313131">
+        <h1 style="color: white">Bio Data</h1>
+        <h2 style="color: white">Graphic application for Bioexplorer's HEG designs</h2>
+    </div>
+    <div style="background-color: #666666">
+        <ul style="list-style-type: none; display: flex">
+            {% if app.user %}
+                <li><a href="{{ logout_path(key = null) }}">Logout |</a></li>
+            {% else %}
+                <li><a href="{{ path('login') }}">Login |</a></li>
+            {% endif %}
+            <li><a style="color: white" href="{{ path('index') }}">| Index |</a></li>
+            <li><a style="color: white" href="{{ path('user_new') }}">| Register |</a></li>
+            <li><a style="color: white" href="{{ path('user_index') }}">| Users list |</a></li>
+        </ul>
+    </div>
+</header>
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
 </html>
+

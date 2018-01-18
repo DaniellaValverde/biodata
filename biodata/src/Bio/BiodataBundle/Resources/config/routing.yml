@@ -1,7 +1,27 @@
+bio_biodata_raw:
+    resource: "@BioBiodataBundle/Resources/config/routing/raw.yml"
+    prefix:   /raw
+
 bio_biodata_homepage:
     path:     /
-    defaults: { _controller: BioBiodataBundle:Default:index }
+    defaults: { _controller: BioBiodataBundle:User:index }
 
 index:
     path:     /index
     defaults: { _controller: BioBiodataBundle:User:index }
+
+bio_biodata_eval_area:
+        resource: "@BioBiodataBundle/Resources/config/routing/psychevalarea.yml"
+        prefix:   /eval_area
+
+bio_biodata_eval_freq:
+        resource: "@BioBiodataBundle/Resources/config/routing/psychevalfreq.yml"
+        prefix:   /eval_freq
+
+login:
+    path:     /login
+    defaults: { _controller: BioBiodataBundle:Session:login }
+
+bio_biodata_user:
+        resource: "@BioBiodataBundle/Resources/config/routing/user.yml"
+        prefix:   /user
